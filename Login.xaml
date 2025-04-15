@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Finora.Login"
+             Title="Finora">
+
+    <VerticalStackLayout BackgroundColor="#F5F5F5">
+        <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+        <Label 
+            Margin="0,100,0,0"
+            Text="Welcome"
+            FontSize="24"
+            FontFamily="Montserrat"
+            HorizontalOptions="Center"
+            TextColor="Black" />
+
+        <Entry 
+            Placeholder="Email Address"
+            Margin="0,25,0,0"
+            WidthRequest="450"
+            BackgroundColor="#FFFFFF"
+            FontFamily="Montserrat"
+            />
+
+        <Entry 
+            Placeholder="Password"
+            Margin="0,10,0,0"
+            WidthRequest="450"
+            BackgroundColor="#FFFFFF"
+            FontFamily="Montserrat"
+            />
+
+        <Button
+            Margin="0,30,0,20"
+            Text="Log In"
+            WidthRequest="300"
+            BackgroundColor="#285430"
+            FontFamily="Montserrat"
+            />
+
+        <Label
+            Text="New user?"
+            FontFamily="Montserrat"
+            HorizontalOptions="Center"
+            FontSize="14"
+            />
+
+        <Button
+            Margin="0,10,0,0"
+            Text="Create account"
+            BackgroundColor="#F5F5F5"
+            TextColor="#285430"
+            BorderColor="#2C2C2C"
+            BorderWidth="1"
+            WidthRequest="300"
+            FontFamily="Montserrat"
+            />
+
+    </VerticalStackLayout>
+</ContentPage>

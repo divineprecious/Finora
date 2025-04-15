@@ -4,8 +4,8 @@
              x:Class="Finora.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout>
-            
+        <VerticalStackLayout BackgroundColor="#F5F5F5">
+            <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
         </VerticalStackLayout>
     </ScrollView>
 

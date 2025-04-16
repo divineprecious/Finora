@@ -5,11 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Finora"
     Shell.FlyoutBehavior="Disabled"
+    xmlns:pages="clr-namespace:Finora"
     Title="Finora">
 
-    <ShellContent
-        Title="Login"
-        ContentTemplate="{DataTemplate local:Login}"
-        Route="Login" />
-
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
+        </Tab>
+        <Tab Title="Income">
+            <ShellContent ContentTemplate="{DataTemplate pages:Income}" />
+        </Tab>
+        <Tab Title="Expenses">
+            <ShellContent ContentTemplate="{DataTemplate pages:Expenses}" />
+        </Tab>
+        <Tab Title="Savings">
+            <ShellContent ContentTemplate="{DataTemplate pages:Savings}" />
+        </Tab>
+        <Tab Title="Budget">
+            <ShellContent ContentTemplate="{DataTemplate pages:Budget}" />
+        </Tab>
+        <Tab Title="Settings">
+            <ShellContent ContentTemplate="{DataTemplate pages:Settings}" />
+        </Tab>
+    </TabBar>
 </Shell>

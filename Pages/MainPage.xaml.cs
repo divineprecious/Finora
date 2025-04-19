@@ -1,4 +1,4 @@
-﻿namespace Finora
+﻿namespace Finora.Pages 
 {
     public partial class MainPage : ContentPage
     {

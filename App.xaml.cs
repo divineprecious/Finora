@@ -1,4 +1,4 @@
-﻿
+﻿using Finora.Pages;
 namespace Finora
 {
     public partial class App : Application

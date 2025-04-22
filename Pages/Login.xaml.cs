@@ -1,3 +1,5 @@
+using Finora.Services;
+
 namespace Finora.Pages
 {
 	public partial class Login : ContentPage
@@ -7,20 +9,21 @@ namespace Finora.Pages
 			InitializeComponent();
 		}
 
-		private void OnLoginClicked(object sender, EventArgs e)
+		private async void OnLoginClicked(object sender, EventArgs e)
 		{
 			string email = userEmail.Text;
 			string password = userPassword.Text;
 
-			//Basic hardcoded example
-			if (email == "user@example.com" && password == "password123")
+			var result = await DatabaseHelper.Authenticate(email, password);
+			
+			if (result != null)
 			{
 				//Navigate to Shell-based app
 				Application.Current.MainPage = new AppShell();
 			}
 			else
 			{
-				DisplayAlert("Login Failed", "Incorrect email or password.", "OK");
+				await DisplayAlert("Login Failed", "Incorrect email or password.", "OK");
 			}
 		}
 

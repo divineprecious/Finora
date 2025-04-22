@@ -1,4 +1,5 @@
 ﻿using Finora.Pages;
+using Finora.Services;
 namespace Finora
 {
     public partial class App : Application
@@ -6,6 +7,7 @@ namespace Finora
         public App()
         {
             InitializeComponent();
+            DatabaseHelper.Init();
         }
         protected override Window CreateWindow(IActivationState? activationState)
         {

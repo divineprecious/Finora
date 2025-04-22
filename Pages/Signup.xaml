@@ -47,6 +47,7 @@
             WidthRequest="300"
             BackgroundColor="#285430"
             FontFamily="Montserrat"
+            Clicked="OnRegisterClicked"
             />
     </VerticalStackLayout>
 </ContentPage>

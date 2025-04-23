@@ -2,11 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Finora.Pages.MainPage"
-             Title="Finora">
+             Title="Dashboard">
 
     <ScrollView>
         <VerticalStackLayout BackgroundColor="#F5F5F5">
             <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+            <Picker HorizontalOptions="Center" x:Name="monthPicker" Title="Month">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>January</x:String>
+                        <x:String>February</x:String>
+                        <x:String>March</x:String>
+                        <x:String>April</x:String>
+                        <x:String>May</x:String>
+                        <x:String>June</x:String>
+                        <x:String>July</x:String>
+                        <x:String>August</x:String>
+                        <x:String>September</x:String>
+                        <x:String>October</x:String>
+                        <x:String>November</x:String>
+                        <x:String>December</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="80" Margin="50">
+                <Label x:Name="incomeLabel" Text="Total Income: $0.00" FontSize="18"/>
+                <Label x:Name="expensesLabel" Text="Total Expenses: $0.00" FontSize="18"/>
+                <Label x:Name="netLabel" Text="Net: $0.00" FontSize="18"/>
+            </HorizontalStackLayout>
+
+             <Button
+                Margin="0,30,0,20"
+                Text="Add a new transaction"
+                WidthRequest="300"
+                BackgroundColor="#285430"
+                FontFamily="Montserrat"
+                />
         </VerticalStackLayout>
     </ScrollView>
 

@@ -14,12 +14,13 @@ namespace Finora.Pages
 			string email = userEmail.Text;
 			string password = userPassword.Text;
 
-			var result = await DatabaseHelper.Authenticate(email, password);
+			var user = await DatabaseHelper.Authenticate(email, password);
 			
-			if (result != null)
+			if (user != null)
 			{
 				//Navigate to Shell-based app
 				Application.Current.MainPage = new AppShell();
+				Session.CurrentUser = user;
 			}
 			else
 			{

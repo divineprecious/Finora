@@ -50,7 +50,7 @@ namespace Finora.Services
             return await database.DeleteAsync(transaction);
         }
 
-        public static async Task<List<Transaction>> GetTransactionsForUser(int userId, string type = null, string category = null, int? month = null)
+        public static async Task<List<Transaction>> GetTransactionsForUser(int userId, string type = null, string? category = null, int? month = null)
         {
             await Init();
 
@@ -68,13 +68,14 @@ namespace Finora.Services
                 query = query.Where(t => t.Category == category);
             }
 
-            //Filter by month if provided
+            var results = await query.ToListAsync();
+
             if (month != null)
-            { 
-                query = query.Where(t => t.Date.Month == month.Value);
+            {
+                results = results.Where(t => t.Date.Month == month.Value).ToList();
             }
 
-            return await query.ToListAsync();
+            return results;
         }
     }
 }

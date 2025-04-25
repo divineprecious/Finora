@@ -8,7 +8,7 @@
         <VerticalStackLayout BackgroundColor="#F5F5F5">
             <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
 
-            <Picker HorizontalOptions="Center" x:Name="monthPicker" Title="Month" SelectedIndexChanged="OnMonthChanged">
+            <Picker HorizontalOptions="Center" x:Name="monthPicker" SelectedIndexChanged="OnMonthChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>January</x:String>
@@ -26,7 +26,7 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="100" Margin="50">
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="120" Margin="50">
                 <Label x:Name="incomeLabel" FontSize="18"/>
                 <Label x:Name="expensesLabel" FontSize="18"/>
                 <Label x:Name="netLabel" FontSize="18"/>

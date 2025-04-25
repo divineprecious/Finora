@@ -18,9 +18,10 @@ namespace Finora.Pages
 			
 			if (user != null)
 			{
-				//Navigate to Shell-based app
-				Application.Current.MainPage = new AppShell();
-				Session.CurrentUser = user;
+                //Navigate to Shell-based app
+                Session.CurrentUser = user;
+                Application.Current.MainPage = new AppShell();
+				
 			}
 			else
 			{

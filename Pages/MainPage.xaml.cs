@@ -9,9 +9,25 @@ namespace Finora.Pages
         {
             InitializeComponent();
             monthPicker.SelectedIndex = DateTime.Now.Month - 1;
-            LoadDataforMonth(DateTime.Now.Month);
-
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            int selectedMonth = monthPicker.SelectedIndex + 1;
+
+            if (selectedMonth == 0)
+            {
+                await LoadDataforMonth(DateTime.Now.Month);
+            }
+            else 
+            {
+                await LoadDataforMonth(selectedMonth);
+            }
+            
+        }
+
         private async Task LoadDataforMonth(int month) 
         {
             var user = Session.CurrentUser;

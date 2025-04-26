@@ -18,7 +18,8 @@ namespace Finora.Pages
 			
 			if (user != null)
 			{
-                //Navigate to Shell-based app
+				//Navigate to Shell-based app
+				await DisplayAlert(user.Id.ToString(), "Doody", "Do");
                 Session.CurrentUser = user;
                 Application.Current.MainPage = new AppShell();
 				

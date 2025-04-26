@@ -1,6 +1,6 @@
 ﻿using Finora.Services;
 
-namespace Finora.Pages 
+namespace Finora.Pages
 {
     public partial class MainPage : ContentPage
     {
@@ -30,14 +30,27 @@ namespace Finora.Pages
 
         private async Task LoadDataforMonth(int month) 
         {
-            var user = Session.CurrentUser;
-            if (user == null) return;
+            if (Session.CurrentUser == null)
+            {
+                return;
+            }
 
-            var incomeList = await DatabaseHelper.GetTransactionsForUser(user.Id, "Income", null, month);
-            var expenseList = await DatabaseHelper.GetTransactionsForUser(user.Id, "Expense", null, month);
+            var incomeList = await DatabaseHelper.GetTransactionsForUser(Session.CurrentUser.Id, "Income", null, month);
+            var expenseList = await DatabaseHelper.GetTransactionsForUser(Session.CurrentUser.Id, "Expense", null, month);
 
-            decimal totalIncome = incomeList.Sum(t => t.Amount);
-            decimal totalExpenses = expenseList.Sum(t => t.Amount);
+            decimal totalIncome = 0;
+            decimal totalExpenses = 0;
+
+            if (incomeList != null)
+            {
+                totalIncome = incomeList.Sum(t => t.Amount);
+            }
+
+            if (expenseList != null) 
+            {
+                totalExpenses = expenseList.Sum(t => t.Amount);
+            }
+
             decimal net = totalIncome - totalExpenses;
 
             incomeLabel.Text = $"Total Income: {totalIncome:C}";

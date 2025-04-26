@@ -8,7 +8,7 @@
         <VerticalStackLayout BackgroundColor="#F5F5F5">
             <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
 
-            <Picker HorizontalOptions="Center" x:Name="monthPicker" SelectedIndexChanged="OnMonthChanged">
+            <Picker HorizontalOptions="Center" x:Name="monthPicker" SelectedIndexChanged="OnMonthChanged" Margin="0,0,30,0">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>January</x:String>

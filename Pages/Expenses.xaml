@@ -2,8 +2,120 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Finora.Pages.Expenses"
-             Title="Finora">
+             Title="Dashboard">
     <VerticalStackLayout BackgroundColor="#F5F5F5">
         <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+        <Picker HorizontalOptions="Center" x:Name="expensesMonthPicker" Title="Month">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>January</x:String>
+                    <x:String>February</x:String>
+                    <x:String>March</x:String>
+                    <x:String>April</x:String>
+                    <x:String>May</x:String>
+                    <x:String>June</x:String>
+                    <x:String>July</x:String>
+                    <x:String>August</x:String>
+                    <x:String>September</x:String>
+                    <x:String>October</x:String>
+                    <x:String>November</x:String>
+                    <x:String>December</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!--
+            The values in these labels should be set by a function called when the 
+            "Add New Expense" button is pressed.
+        -->
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 20">
+            <Label
+                x:Name="Date1"
+                Text="Date"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+                />
+            <Label
+                x:Name="Category1"
+                Text="Category"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+                />
+            <Label
+                x:Name="Amount1"
+                Text="Amount"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+        />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 20">
+            <Label
+                x:Name="Date2"
+                Text="Date"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+                />
+            <Label
+                x:Name="Category2"
+                Text="Category"
+                TextColor="Black"
+            Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+                />
+            <Label
+                x:Name="Amount2"
+                Text="Amount"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+                />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 20">
+            <Label
+                x:Name="Date3"
+                Text="Date"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+                />
+            <Label
+                x:Name="Category3"
+                Text="Category"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+                />
+            <Label
+                x:Name="Amount3"
+                Text="Amount"
+                TextColor="Black"
+                Margin="50, 0, 50, 0"
+                FontSize="24"
+                FontFamily="Montserrat"
+        />
+        </HorizontalStackLayout>
+        <Button
+            Margin="0,10,0,0"
+            Text="Add New Expense"
+            BackgroundColor="#285430"
+            TextColor="#FFFFFF"
+            BorderColor="#2C2C2C"
+            BorderWidth="1"
+            WidthRequest="300"
+            FontFamily="Montserrat"
+            />
     </VerticalStackLayout>
 </ContentPage>

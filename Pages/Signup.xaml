@@ -22,6 +22,7 @@
             WidthRequest="450"
             BackgroundColor="#FFFFFF"
             FontFamily="Montserrat"
+            TextColor="Black" 
             />
         <Entry 
             x:Name="registerEmail"
@@ -30,6 +31,7 @@
             WidthRequest="450"
             BackgroundColor="#FFFFFF"
             FontFamily="Montserrat"
+            TextColor="Black" 
             />
 
         <Entry 
@@ -39,6 +41,7 @@
             WidthRequest="450"
             BackgroundColor="#FFFFFF"
             FontFamily="Montserrat"
+            TextColor="Black" 
             />
 
         <Button

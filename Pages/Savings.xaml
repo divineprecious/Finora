@@ -2,8 +2,60 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Finora.Pages.Savings"
-             Title="Finora">
+             Title="Dashboard">
     <VerticalStackLayout BackgroundColor="#F5F5F5">
         <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+        <Picker HorizontalOptions="Center" x:Name="savingsMonthPicker" Title="Month">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>January</x:String>
+                    <x:String>February</x:String>
+                    <x:String>March</x:String>
+                    <x:String>April</x:String>
+                    <x:String>May</x:String>
+                    <x:String>June</x:String>
+                    <x:String>July</x:String>
+                    <x:String>August</x:String>
+                    <x:String>September</x:String>
+                    <x:String>October</x:String>
+                    <x:String>November</x:String>
+                    <x:String>December</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        
+        <!-- 
+            Not sure how to implement the progress bar yet 
+        -->
+
+        <Label
+            Margin="0, 20, 0, 30"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="24"
+            FontFamily="Montserrat"
+            Text="Goal Progress: %"
+            />
+        <Button
+            Margin="0,10,0,0"
+            Text="Update Progress"
+            BackgroundColor="#285430"
+            TextColor="#FFFFFF"
+            BorderColor="#2C2C2C"
+            BorderWidth="1"
+            WidthRequest="300"
+            FontFamily="Montserrat"
+            />
+        <Button
+            Margin="0,10,0,0"
+            Text="Set Savings Goal"
+            BackgroundColor="#285430"
+            TextColor="#FFFFFF"
+            BorderColor="#2C2C2C"
+            BorderWidth="1"
+            WidthRequest="300"
+            FontFamily="Montserrat"
+            />
     </VerticalStackLayout>
 </ContentPage>

@@ -22,6 +22,7 @@
             WidthRequest="450"
             BackgroundColor="#FFFFFF"
             FontFamily="Montserrat"
+            TextColor="Black" 
             />
 
         <Entry 
@@ -32,6 +33,7 @@
             BackgroundColor="#FFFFFF"
             FontFamily="Montserrat"
             IsPassword="True"
+            TextColor="Black" 
             />
 
         <Button
@@ -61,6 +63,6 @@
             FontFamily="Montserrat"
             Clicked="OnCreateClicked"
             />
-
+        
     </VerticalStackLayout>
 </ContentPage>

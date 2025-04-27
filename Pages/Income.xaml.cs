@@ -5,6 +5,6 @@ namespace Finora.Pages
 		public Income()
 		{
 			InitializeComponent();
-		}
-	}
+        }
+    }
 }

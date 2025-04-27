@@ -8,6 +8,23 @@ namespace Finora.Pages
 			InitializeComponent();
             monthPicker.SelectedIndex = DateTime.Now.Month - 1;
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            int selectedMonth = monthPicker.SelectedIndex + 1;
+
+            if (selectedMonth == 0)
+            {
+                await LoadIncomeforMonth(DateTime.Now.Month);
+            }
+            else
+            {
+                await LoadIncomeforMonth(selectedMonth);
+            }
+
+        }
         private async Task LoadIncomeforMonth(int month)
         {
             var user = Session.CurrentUser;
@@ -67,6 +84,11 @@ namespace Finora.Pages
                 int selectedMonth = monthPicker.SelectedIndex + 1;
                 await LoadIncomeforMonth(selectedMonth);
             }
+        }
+
+        private async void OnIncomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Modals.AddIncome());
         }
     }
 }

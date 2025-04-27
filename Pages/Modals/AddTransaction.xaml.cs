@@ -1,6 +1,6 @@
 using Finora.Models;
 using Finora.Services;
-namespace Finora.Pages;
+namespace Finora.Pages.Modals;
 
 public partial class AddTransaction : ContentPage
 {

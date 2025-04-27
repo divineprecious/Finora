@@ -68,7 +68,7 @@ namespace Finora.Pages
         }
         private async void OnTransClicked(object sender, EventArgs e) 
         {
-            await Navigation.PushModalAsync(new AddTransaction());
+            await Navigation.PushModalAsync(new Modals.AddTransaction());
         }
 
     }

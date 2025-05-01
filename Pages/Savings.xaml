@@ -2,8 +2,48 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Finora.Pages.Savings"
-             Title="Finora">
+             Title="Savings">
     <VerticalStackLayout BackgroundColor="#F5F5F5">
         <Border Stroke="#B2B2B2" StrokeThickness="1" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+        <Picker HorizontalOptions="Center" x:Name="monthPicker" Margin="0,30,0,20" SelectedIndexChanged="OnMonthChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>January</x:String>
+                    <x:String>February</x:String>
+                    <x:String>March</x:String>
+                    <x:String>April</x:String>
+                    <x:String>May</x:String>
+                    <x:String>June</x:String>
+                    <x:String>July</x:String>
+                    <x:String>August</x:String>
+                    <x:String>September</x:String>
+                    <x:String>October</x:String>
+                    <x:String>November</x:String>
+                    <x:String>December</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Label Margin="20" Text="Goal Progress" HorizontalOptions="Center" FontSize="30"></Label>
+        <ProgressBar x:Name="SavingProgress" ProgressColor="Green" HeightRequest="200" WidthRequest="300" Progress="0.4"></ProgressBar>
+
+
+        <Button
+                Margin="0,10,0,10"
+                Text="Update Progess"
+                WidthRequest="300"
+                BackgroundColor="#285430"
+                FontFamily="Montserrat"
+                Clicked="OnUpdateClicked"
+                />
+
+        <Button
+                Margin="0,10,0,10"
+                Text="Set a Savings Goal"
+                WidthRequest="300"
+                BackgroundColor="#285430"
+                FontFamily="Montserrat"
+                Clicked="OnGoalClicked"
+                />
+
     </VerticalStackLayout>
 </ContentPage>

@@ -16,6 +16,7 @@ namespace Finora.Services
             database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
             await database.CreateTableAsync<User>();
             await database.CreateTableAsync<Transaction>();
+            await database.CreateTableAsync<Saving>();
         }
 
         //Users
@@ -77,5 +78,48 @@ namespace Finora.Services
 
             return results;
         }
+
+        //Savings
+        public static async Task<int> AddSavings(Saving savings)
+        {
+            await Init();
+            return await database.InsertAsync(savings);
+        }
+
+        public static async Task<int> UpdateSavedAmountAsync(int userId, int month, decimal newAmount)
+        {
+            var savings = await database.Table<Saving>()
+                                         .Where(s => s.UserId == userId && s.Month == month)
+                                         .FirstOrDefaultAsync();
+
+            if (savings != null)
+            {
+                savings.SavedAmount = newAmount;
+                return await database.UpdateAsync(savings);
+            }
+            return 0;
+        }
+
+        public static async Task<int> UpdateGoalAmountAsync(int userId, int month, decimal newAmount)
+        {
+            var savings = await database.Table<Saving>()
+                                         .Where(s => s.UserId == userId && s.Month == month)
+                                         .FirstOrDefaultAsync();
+
+            if (savings != null)
+            {
+                savings.GoalAmount = newAmount;
+                return await database.UpdateAsync(savings);
+            }
+            return 0;
+        }
+
+        public static async Task <Saving> GetSavingsForUser(int userId, int month)
+        {
+            await Init();
+
+            return await database.Table<Saving>().Where(s => s.UserId == userId && s.Month == month).FirstOrDefaultAsync();
+        }
+
     }
 }

@@ -64,6 +64,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\Modals\UpdateSavings.xaml.cs">
+	    <DependentUpon>UpdateSavings.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Modals\SetSavings.xaml.cs">
+	    <DependentUpon>SetSavings.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\Modals\AddTransaction.xaml.cs">
 	    <DependentUpon>AddTransaction.xaml</DependentUpon>
 	  </Compile>
@@ -80,6 +86,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Modals\UpdateSavings.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Modals\SetSavings.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Modals\AddExpense.xaml">

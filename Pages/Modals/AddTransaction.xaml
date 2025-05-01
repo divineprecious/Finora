@@ -34,7 +34,6 @@
             HorizontalOptions="Center"
             x:Name="transDate"
             Margin="0,20,0,0"
-            Date="04/23/25"
             />
 
         <Button

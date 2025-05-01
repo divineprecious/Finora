@@ -25,7 +25,7 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <ScrollView>
+            <ScrollView Margin="30">
                 <VerticalStackLayout x:Name="TransactionList" />
             </ScrollView>
 
